@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="d-flex justify-content-center align-items-center" style="height: 90vh;">
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <h3>Login</h3>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+            <label for="email">Email</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+            <label for="password">Password</label>
+        </div>
+        <div class="d-grid gap-2 mt-3">
+            <button class="btn btn-primary" type="submit">Login</button>
+          </div>
+    </form>
+</div>
+{% endblock main %}
