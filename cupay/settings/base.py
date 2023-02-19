@@ -55,6 +55,7 @@ CUSTOM_APPS = [
     "core.invoices",
     "core.pages",
     "core.notifications",
+    "core.overview",
     "docs",
     "accounts",
 ]
@@ -153,3 +154,5 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ]
 }
+
+LOGIN_URL = "accounts/login/"

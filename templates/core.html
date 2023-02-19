@@ -8,8 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CuPay</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/core.css' %}">
 
     <!-- Custom CSS -->
     {% block style %}
@@ -17,8 +27,19 @@
 </head>
 
 <body>
-    {% block main %}
-    {% endblock main %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 col-md-2 bg-light sidebar">
+                <!-- Sidebar content goes here -->
+                {% include 'sidebar.html' %}
+            </div>
+            <div class="col">
+                <!-- Main content goes here -->
+                {% block main %}
+                {% endblock main %}
+            </div>
+        </div>
+    </div>
 
     <!-- Boostrap JS -->
     <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
