@@ -2,7 +2,7 @@ import base64
 from rest_framework import authentication
 from rest_framework import exceptions
 
-from core.merchants.models import Merchant
+from merchants.models import Merchant
 
 
 class MerchantAuthentication(authentication.BaseAuthentication):

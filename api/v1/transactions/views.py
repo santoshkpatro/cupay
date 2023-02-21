@@ -2,8 +2,8 @@ import base64
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from core.transactions.models import Transaction
-from core.merchants.models import Merchant
+from merchants.transactions.models import Transaction
+from merchants.models import Merchant
 
 from .serializers import TransactionCreateSerializer
 from cupay.authentications import MerchantAuthentication

@@ -43,20 +43,22 @@ THIRD_PARTY_APPS = [
     "corsheaders",
 ]
 CUSTOM_APPS = [
-    "core.base",
-    "core.users",
-    "core.merchants",
-    "core.customers",
-    "core.payments",
-    "core.settlements",
-    "core.subscriptions",
-    "core.transactions",
-    "core.webhooks",
-    "core.invoices",
-    "core.pages",
-    "core.notifications",
+    "base",
+    "home",
+    "users",
     "docs",
     "accounts",
+    "merchants",
+    "merchants.collaborators",
+    "merchants.customers",
+    "merchants.payments",
+    "merchants.settlements",
+    "merchants.transactions",
+    "merchants.subscriptions",
+    "merchants.webhooks",
+    "merchants.invoices",
+    "merchants.pages",
+    "merchants.notifications",
 ]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + CUSTOM_APPS
 
@@ -153,3 +155,5 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ]
 }
+
+LOGIN_URL = "accounts/login/"
