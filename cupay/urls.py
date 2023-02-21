@@ -8,7 +8,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/", include("accounts.urls")),
     path("api/v1/", include("api.v1.urls")),
-    path("<str:merchant_id>/transactions", include("core.transactions.urls")),
+    path("merchants/", include("merchants.urls")),
+    path("", include("home.urls")),
 ]
 
 if settings.DEBUG:

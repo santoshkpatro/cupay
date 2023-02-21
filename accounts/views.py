@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import TemplateView
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 from .forms import LoginForm
 
@@ -16,5 +16,15 @@ class LoginView(TemplateView):
             return super().get(request, *args, **kwargs)
 
         data = login_form.cleaned_data
-        print(data)
-        return super().get(request, *args, **kwargs)
+        user = authenticate(request, username=data["email"], password=data["password"])
+        if not user:
+            return super().get(request, *args, **kwargs)
+
+        login(request, user)
+        return redirect("home:index")
+
+
+class LogoutView(View):
+    def get(self, request):
+        logout(request)
+        return redirect("home:index")
